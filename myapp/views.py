@@ -10,3 +10,6 @@ def register(request):
 
 def home(request):
 	return render(request,'sidebar.html')
+
+def dashboard(request):
+	return render(request,'dashboard.html')
