@@ -19,6 +19,7 @@ def register(request):
 						email=request.POST['email'],
 						password=request.POST['password']
 					)
+
 				msg="User registered successfully"
 				return render(request,'login.html',{'msg':msg})
 			else:
