@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="csrf-token" content="iL8hUXsdXy71MbOZjq4fWUv4KGPZnJ7k17P7RClL">
         <link rel="icon" href="https://thememakker.com/templates/oreo/hospital/laravel/public/favicon.ico" type="image/x-icon"> <!-- Favicon-->
-        <title>All Doctors - Oero Laravel</title>
+        <title>All Artists</title>
         <meta name="description" content="Oero Laravel">
         <meta name="author" content="Oero Laravel">
                 
@@ -60,9 +60,15 @@
         </li>   
           
         <!-- Go to Login -->
+        {% if request.session.email %}
         <li class="float-right">
-            <a href="/" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>  
+            <li><a href="#"><i style='font-size:15px, 'class='fa fa-key'></i>Change Password</a></li>
+            <li><a href="{% url 'logout' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Logout({{request.session.name}})</a></li>  
         </li>
+        {% else %}
+            <li><a href="{% url 'register' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Sign Up</a></li>
+            <li><a href="{% url 'login' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Login</a></li>
+        {% endif %}
     </ul>
 </nav>        
 
@@ -79,8 +85,9 @@
                         <div class="user-info">
                             <div class="image"><a href=""><img src="" alt="User"></a></div>
                             <div class="detail">
-                                <h4>Profile Name</h4>
-                                <small>UserType</small>                        
+                                {% if request.session.email %}
+                                <h4>{{request.session.name}}</h4>  
+                                {% endif %}                      
                             </div>
                         </div>
                     </li>
