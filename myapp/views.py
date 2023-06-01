@@ -81,3 +81,6 @@ def home(request):
 
 def dashboard(request):
 	return render(request,'dashboard.html')
+
+def booking(request):
+	return render(request,'book-appointment.html')
