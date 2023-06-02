@@ -9,4 +9,8 @@ urlpatterns = [
     path('login/',views.login,name='login'),
     path('logout/',views.logout,name='logout'),
     path('booking/',views.booking,name='booking'),
+
+    # artist urls
+
+    path('artist-profile/',views.artist_profile,name='artist-profile'),
 ]

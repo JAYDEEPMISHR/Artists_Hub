@@ -84,3 +84,6 @@ def dashboard(request):
 
 def booking(request):
 	return render(request,'book-appointment.html')
+
+def artist_profile(request):
+	return render(request,'edit-artist-profile.html')
