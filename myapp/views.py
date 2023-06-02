@@ -49,7 +49,7 @@ def login(request):
 					request.session['email']=user.email
 					request.session['name']=user.name
 					request.session['usertype']=user.usertype
-					return render(request,'dashboard.html')
+					return render(request,'artist-profile.html')
 
 				else:
 					request.session['email']=user.email
