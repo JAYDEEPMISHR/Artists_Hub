@@ -86,4 +86,13 @@ def booking(request):
 	return render(request,'book-appointment.html')
 
 def artist_profile(request):
-	return render(request,'edit-artist-profile.html')
+	user=User.objects.get(email=request.session['email'])
+	if request.method=="POST":
+		
+		user.email=request.POST['email']
+		user.name=request.POST['name']
+		user.save()
+		request.session['name']=user.name
+		return render(request,'artist-profile.html',{'user':user})
+	else:
+		return render(request,'edit-artist-profile.html')
