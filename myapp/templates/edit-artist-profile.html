@@ -72,12 +72,12 @@
                       <p class="mb-0">Email</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><input type="text" name="" value="{{request.session.email}}"></p>
+                      <p class="text-muted mb-0"><input type="text" name="" value="{{request.session.email}}" readonly></p>
                     </div>
                   </div>
                   <hr>
                   <div class="d-flex justify-content-center mb-2">
-                    <input type="submit" class="btn btn-primary">
+                    <button class="btn btn-lg-primary" value="Submit">Submit</button>
                   </div>
                   {% endif %}
                 </div>
