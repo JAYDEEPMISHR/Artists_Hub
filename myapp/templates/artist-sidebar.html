@@ -81,9 +81,10 @@
                 <ul class="list">
                     <li>
                         <div class="user-info">
-                            <div class="image"><a href=""><img src="" alt="User"></a></div>
+                            {% if request.session.email %}
+                            <div class="image"><a href=""><img src="{{request.session.profile_pic.url}}" alt="User"></a></div>
                             <div class="detail">
-                                {% if request.session.email %}
+                                
                                 <h4>{{request.session.name}}</h4>  
                                 {% endif %}                      
                             </div>

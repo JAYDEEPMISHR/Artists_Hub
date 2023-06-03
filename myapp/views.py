@@ -43,18 +43,21 @@ def login(request):
 					request.session['email']=user.email
 					request.session['name']=user.name
 					request.session['usertype']=user.usertype
+					request.session['profile_pic']=user.profile_pic.url
 					return render(request,'dashboard.html')
 
 				elif user.usertype=="Artists":
 					request.session['email']=user.email
 					request.session['name']=user.name
 					request.session['usertype']=user.usertype
+					request.session['profile_pic']=user.profile_pic.url
 					return render(request,'artist-profile.html')
 
 				else:
 					request.session['email']=user.email
 					request.session['name']=user.name
 					request.session['usertype']=user.usertype
+					request.session['profile_pic']=user.profile_pic.url
 					return render(request,'dashboard.html')
 			else:
 				msg="Incorrect Password"
@@ -70,6 +73,7 @@ def logout(request):
 		del request.session['email']
 		del request.session['name']
 		del request.session['usertype']
+		del request.session['profile_pic']
 		return redirect('index')
 	except:
 		return render(request,'login.html')
