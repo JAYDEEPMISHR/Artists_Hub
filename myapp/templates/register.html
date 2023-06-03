@@ -59,7 +59,7 @@
 
             <!-- Registration form -->
 
-            <form class="form" method="post" action="{% url 'register' %}">
+            <form class="form" method="post" enctype="multipart/form-data" action="{% url 'register' %}">
                 {% csrf_token %}
                 <div class="header">
                     <div class="logo-container">
@@ -107,7 +107,12 @@
                         <span class="input-group-addon" id="cnew_Password_error">                       
                             <i class="zmdi zmdi-lock"></i>
                         </span>
-        
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" type="file" name="profile_pic">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-camera"></i>
+                        </span>
                     </div>                        
                 </div>
                 
