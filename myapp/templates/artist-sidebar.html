@@ -82,7 +82,7 @@
                     <li>
                         <div class="user-info">
                             {% if request.session.email %}
-                            <div class="image"><a href=""><img src="{{request.session.profile_pic.url}}" alt="User"></a></div>
+                            <div class="image"><a href=""><img src="{{request.session.profile_pic}}" alt="User"></a></div>
                             <div class="detail">
                                 
                                 <h4>{{request.session.name}}</h4>  
