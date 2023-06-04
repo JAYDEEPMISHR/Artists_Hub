@@ -51,7 +51,7 @@ def login(request):
 					request.session['name']=user.name
 					request.session['usertype']=user.usertype
 					request.session['profile_pic']=user.profile_pic.url
-					return render(request,'artist-profile.html')
+					return render(request,'artist-homepage.html')
 
 				else:
 					request.session['email']=user.email
