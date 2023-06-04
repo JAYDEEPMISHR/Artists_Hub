@@ -13,4 +13,5 @@ urlpatterns = [
     # artist urls
 
     path('artist-profile/',views.artist_profile,name='artist-profile'),
+    path('artist-dashboard/',views.artist_dashboard,name='artist-dashboard'),
 ]

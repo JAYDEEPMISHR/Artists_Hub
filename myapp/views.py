@@ -102,3 +102,6 @@ def artist_profile(request):
 			pass
 	else:
 		return render(request,'edit-artist-profile.html')
+
+def artist_dashboard(request):
+	return render(request,'artist-homepage.html')

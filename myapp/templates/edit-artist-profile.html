@@ -41,7 +41,7 @@
               <div class="card mb-4">
                 {% if request.session.email %}
                 <div class="card-body text-center">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                  <img src="{{request.session.profile_pic}}" alt="avatar"
                     class="rounded-circle img-fluid" style="width: 150px;">
                   <h5 class="my-3">{{request.session.name}}</h5>
                   
