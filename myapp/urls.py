@@ -14,5 +14,5 @@ urlpatterns = [
 
     path('artist-profile/',views.artist_profile,name='artist-profile'),
     path('artist-dashboard/',views.artist_dashboard,name='artist-dashboard'),
-    path('add-photos-video/',views.add_photos_video,name='add-photos-video'),
+    path('add-video/',views.add_video,name='add-video'),
 ]

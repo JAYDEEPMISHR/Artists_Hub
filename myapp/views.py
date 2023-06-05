@@ -106,5 +106,5 @@ def artist_profile(request):
 def artist_dashboard(request):
 	return render(request,'artist-homepage.html')
 
-def add_photos_video(request):
-	return render(request,'add-photos-video.html')
+def add_video(request):
+	return render(request,'add-video.html')
