@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import User
+from .models import User,Video
 
 # Create your views here.
 
@@ -105,3 +105,6 @@ def artist_profile(request):
 
 def artist_dashboard(request):
 	return render(request,'artist-homepage.html')
+
+def add_photos_video(request):
+	return render(request,'add-photos-video.html')
