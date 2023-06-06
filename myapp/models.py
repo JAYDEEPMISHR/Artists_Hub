@@ -18,3 +18,10 @@ class Video(models.Model):
 
     def __str__(self):
         return self.name + ": " + str(self.videofile)
+
+class Photo(models.Model):
+	name=models.CharField(max_length=100)
+	photofile=models.ImageField(upload_to='photos/',default="", null=True)
+
+	def __str__(self):
+		return self.name + ": " +str(self.photofile)

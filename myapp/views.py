@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import User,Video
+from .models import User,Video,Photo
 
 # Create your views here.
 
@@ -108,3 +108,17 @@ def artist_dashboard(request):
 
 def add_video(request):
 	return render(request,'add-video.html')
+
+def add_photo(request):
+	if request.POST=="POST":
+		try:
+			user=User.objects.get(email=request.POST['email'])
+			photo=Photo.objects.create(
+				 name=request.POST['name'],
+				 photofile=request.POST['file']
+				)
+			return render(request,'artist-homepage.html',{'user':user,'photo':photo})
+		except:
+			pass
+	else:
+		return render(request,'add-photo.html')

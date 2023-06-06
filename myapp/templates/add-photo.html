@@ -19,42 +19,33 @@
         <link rel="stylesheet" href="{% static 'css\color_skins.css' %}">
 </head>
 <body>
-	 <div class="body" style="padding-top: 70px; width: 80%; float: right">
-	 		<form action="/" id="frmFileUpload" class="dropzone m-b-20" method="post" enctype="multipart/form-data">
+	   <div class="body" style="padding-top: 70px; width: 80%; float: right">
+	 		<form action="{% url 'add-photo' %}" id="frmFileUpload" class="dropzone m-b-20" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                     <div class="row clearfix">
 
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Video Name" name="name">
+                                <input type="text" class="form-control" placeholder="Photo Name" name="name">
                             </div>
                         </div>
                         <div class="col-sm-12">
                             
-                                <div class="dz-message">
-                                    
-                                    <h3>Drop files here or click to upload.</h3>
-                                    <em>(This is just a demo dropzone. Selected files are <strong></strong> actually uploaded.)</em> 
-                                </div>
                                 <div class="fallback">
-                                    <input name="file" type="file" multiple="">
+                                    <input name="file" type="file">
                                 </div>
                             
                         </div>
-                        </div>
+                    </div>
+
                     <div class="row clearfix">                            
                         <div class="col-sm-12">
-                            <input type="submit" class="btn btn-primary btn-round">Submit</input>
                             <input type="submit" value="Submit" class="btn btn-primary btn-round">
                         </div>
                     </div>
                     </form>
-                </div>
-            </div>
         </div>
-    </div>
-            </div>
-        </section>
+</section>
 </body>
 </html>
 {% endblock %}
