@@ -117,7 +117,8 @@ def add_photo(request):
 				 name=request.POST['name'],
 				 photofile=request.POST['file']
 				)
-			return render(request,'artist-homepage.html',{'user':user,'photo':photo})
+			msg="Photo saved successfully"
+			return render(request,'artist-homepage.html',{'user':user,'photo':photo,'msg':msg})
 		except:
 			pass
 	else:
