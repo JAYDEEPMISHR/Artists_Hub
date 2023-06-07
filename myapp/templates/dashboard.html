@@ -20,45 +20,31 @@
         <!-- Custom Css -->
         <link rel="stylesheet" href="{% static 'css\main.css' %}">
         <link rel="stylesheet" href="{% static 'css\color_skins.css' %}">
-
     </head>
+<body>
+    <section class="timeline-carousel">
+       <div class="container">
+          <div class="row">
+             <div class="col-8 offset-2 text-center mb-5">
+             
+             </div>
+          </div>
+       </div>
+       <div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+          <!--Timeline item-->
+          <div class="timeline-carousel__item">
+             <div class="timeline-carousel__image">
+                <div class="media-wrapper media-wrapper--overlay" style="background: url('https://via.placeholder.com/550x320/171717/cccccc?text=550x320') center center; background-size:cover;"></div>
+             </div>
+             <div class="timeline-carousel__item-inner">
+                <span class="year">2001-2003</span>
+               
+             </div>
+          </div>
+      <!--/Timeline item-->
+      </div>
+</section>
+</body>
         
-        <div class="card" style="width: 20%; height: 20%; padding-top: 50px;">
-        <img src="{% static 'images\download.jpeg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Arijit Singh</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        
-        <div class="card" style="width: 20%; height: 20%; padding-top: 50px;">
-        <img src="{% static 'images\download.jpeg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Arijit Singh</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-
-        <!-- Scripts -->
-        <script src="..\assets\bundles\libscripts.bundle.js"></script>    
-        <script src="..\assets\bundles\vendorscripts.bundle.js"></script>
-
-        <script src="..\assets\bundles\mainscripts.bundle.js"></script>
-                        <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/59f5afbbbb0c3f433d4c5c4c/default';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-        </script>
-        <!--End of Tawk.to Script-->
-    </body>
 </html>
 {% endblock %}

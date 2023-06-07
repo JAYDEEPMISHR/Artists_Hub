@@ -7,36 +7,32 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Home page</title>
-
-	       <!-- css -->
-		<style type="text/css">
-			/* Three image containers (use 25% for four, and 50% for two, etc) */
-			.column {
-			  float: left;
-			  width: 33.33%;
-			  padding: 5px;
-			}
-
-			/* Clear floats after image containers */
-			.row::after {
-			  content: "";
-			  clear: both;
-			  display: table;
-			}
-		</style>
+	<style type="text/css">
+		#image{
+			width: 250px;
+			height: 400px;
+			float: left;
+			
+		}
+	</style>
 </head>
 <body>
-	<div>Photos</div>
-	<div class="row">
-	  <div class="column">
-	    <img src="{% static 'images\logo.svg' %}" alt="Snow" style="width:100%">
-	  </div>
-	  <div class="column">
-	    <img src="{% static 'images\logo.svg' %}" alt="Forest" style="width:100%">
-	  </div>
-	  <div class="column">
-	    <img src="{% static 'images\logo.svg' %}" alt="Mountains" style="width:100%">
-	  </div>
+	<div style="padding-top:50px">
+		<h5>Images</h5>
+	</div>
+	<div>
+		<div id='image'>
+			<img src="{% static 'images/image1.jpg' %}">
+		</div>
+		<div id='image'>
+			<img src="{% static 'images/image2.jpg' %}">
+		</div>
+		<div id='image'>
+			<img src="{% static 'images/image2.jpg' %}">
+		</div>
+	</div>
+	<div id='video'>
+		<video></video>
 	</div>
 </body>
 </html>

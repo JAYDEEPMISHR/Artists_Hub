@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="csrf-token" content="iL8hUXsdXy71MbOZjq4fWUv4KGPZnJ7k17P7RClL">
         <link rel="icon" href="https://thememakker.com/templates/oreo/hospital/laravel/public/favicon.ico" type="image/x-icon"> <!-- Favicon-->
-        <title>Book Appointment - Oero Laravel</title>
+        <title>Book Appointment</title>
         <meta name="description" content="Oero Laravel">
         <meta name="author" content="Oero Laravel">
                 
@@ -44,21 +44,19 @@
                 <div class="row clearfix">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First Name">
+                            <input type="text" class="form-control" placeholder="First Name" name="fname">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Last Name">
+                            <input type="text" class="form-control" placeholder="Last Name" name="lname">
                         </div>
                     </div>
                 </div>
                 <div class="row clearfix">
                     <div class="col-sm-6">
-                        <select class="form-control show-tick">
-                            <option value="">- Gender -</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                        <select class="form-control show-tick" >
+                            <option value="" name="artists">- Select an artists -</option>
                         </select>
                     </div>
                     <div class="col-sm-6">
@@ -66,26 +64,19 @@
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-calendar"></i>
                             </span>
-                            <input type="text" class="form-control datetimepicker" placeholder="Please choose date & time...">
+                            <input type="text" class="form-control datetimepicker" placeholder="Please choose date & time..." name="datetime">
                         </div>
                     </div>
                 </div>
                 <div class="row clearfix">
                     <div class="col-sm-12">
-                        <select class="form-control show-tick">
-                            <option value="">- Artist -</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-12">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Your Email">
+                            <input type="text" class="form-control" placeholder="Enter Your Email" name="email">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone">
+                            <input type="text" class="form-control" placeholder="Phone" name="mobile">
                         </div>
                     </div>
                     <div class="col-sm-12">
@@ -100,9 +91,7 @@
 </form>
             
 <!-- Scripts -->
-        <script src="..\assets\bundles\libscripts.bundle.js"></script>    
-        <script src="..\assets\bundles\vendorscripts.bundle.js"></script>
-        <script src="..\assets\bundles\mainscripts.bundle.js"></script>
+   
         <script src="{% static 'plugins\momentjs\moment.js' %}"></script>
         <script src="{% static 'plugins\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.js' %}"></script>
         <script>$.fn.selectpicker.Constructor.DEFAULTS.iconBase = 'zmdi';

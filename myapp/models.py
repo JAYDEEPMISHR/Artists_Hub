@@ -25,3 +25,14 @@ class Photo(models.Model):
 
 	def __str__(self):
 		return self.name + ": " +str(self.photofile)
+
+class Booking(models.Model):
+	fname=models.CharField(max_length=100)
+	lname=models.CharField(max_length=100)
+	artists=models.CharField(max_length=100)
+	datetime=models.DateTimeField()
+	email=models.EmailField()
+	mobile=models.PositiveIntegerField()
+
+	def __str__(self):
+		return self.fname+'-'+self.lname+'-'+self.artists
