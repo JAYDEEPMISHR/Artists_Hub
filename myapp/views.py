@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import User,Video,Photo
+from .models import User,Video,Photo,Booking
 
 # Create your views here.
 
@@ -89,8 +89,17 @@ def dashboard(request):
 def booking(request):
 	user=User.objects.get(email=request.session['email'])
 	if request.method=="POST":
-
-
+		user=User.objects.filter(usertype="Artists")
+		booking=Booking.objects.create(
+			fname=request.POST['fname'],
+			lname=request.POST['lname'],
+			artists=request.POST['artists'],
+			datetime=request.POST['datetime'],
+			email=request.POST['email'],
+			mobile=request.POST['mobile'],
+			)
+		msg="Your booking has been send for approval"
+		return render(request,'book-appointment.html',{'user':user,'booking':booking,'msg':msg})
 	else:
 		return render(request,'book-appointment.html')
 
