@@ -29,7 +29,7 @@ class Photo(models.Model):
 class Booking(models.Model):
 	fname=models.CharField(max_length=100)
 	lname=models.CharField(max_length=100)
-	artists=models.CharField(max_length=100)
+	artists=models.ForeignKey(User,on_delete=models.CASCADE)
 	datetime=models.DateTimeField()
 	email=models.EmailField()
 	mobile=models.PositiveIntegerField()

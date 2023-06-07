@@ -87,7 +87,12 @@ def dashboard(request):
 	return render(request,'dashboard.html')
 
 def booking(request):
-	return render(request,'book-appointment.html')
+	user=User.objects.get(email=request.session['email'])
+	if request.method=="POST":
+
+
+	else:
+		return render(request,'book-appointment.html')
 
 def artist_profile(request):
 	user=User.objects.get(email=request.session['email'])
