@@ -56,7 +56,9 @@
                 <div class="row clearfix">
                     <div class="col-sm-6">
                         <select class="form-control show-tick" >
+                            {% for i in user %}
                             <option value="" name="artists">- Select an artists -</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="col-sm-6">
