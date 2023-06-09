@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="csrf-token" content="iL8hUXsdXy71MbOZjq4fWUv4KGPZnJ7k17P7RClL">
+        <link rel="icon" href="https://thememakker.com/templates/oreo/hospital/laravel/public/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+        <title>All Artists</title>
+        <meta name="description" content="Oero Laravel">
+        <meta name="author" content="Oero Laravel">
+                
+        <link rel="stylesheet" href="{% static 'plugins\bootstrap\css\bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins\bootstrap-select\css\bootstrap-select.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="{% static 'css\main.css' %}">
+        <link rel="stylesheet" href="{% static 'css\color_skins.css' %}">
+
+    </head>
+        <body class="theme-cyan">
+        
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <nav class="navbar p-l-5 p-r-5">
+        <ul class="nav navbar-nav navbar-left">
+
+        <!-- Image & Name -->
+        <li>
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="#"><img src="{% static 'images\logo.svg' %}" width="30" alt="Oreo"><span class="m-l-10"></span></a>
+            </div>
+        </li>
+
+        <!-- Menu Slider -->
+        <li>
+            <a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a>
+        </li>
+
+        <!-- Calender  -->
+        <li class="d-none d-lg-inline-block">
+            <a href="events.html" title="Events"><i class="zmdi zmdi-calendar"></i></a>
+        </li>
+        
+        <!-- Searchbar -->
+        <li class="d-none d-md-inline-block">
+            <div class="input-group">                
+                <input type="text" class="form-control" placeholder="Search...">
+                <span class="input-group-addon">
+                    <i class="zmdi zmdi-search"></i>
+                </span>
+            </div>
+        </li>   
+          
+        <!-- Go to Login -->
+        {% if request.session.email %}
+        <li class="float-right">
+            <li><a href="#"><i style='font-size:15px, 'class='fa fa-key'></i>Change Password</a></li>
+            <li><a href="#"><i style='font-size:15px' class='far'>&#xf2bd;</i> Logout({{request.session.name}})</a></li>  
+        </li>
+        {% else %}
+            <li><a href="{% url 'artist-register' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Sign Up</a></li>
+            <li><a href="{% url 'artist-login' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Login</a></li>
+        {% endif %}
+    </ul>
+</nav>        
+
+<!-- Left Sidebar -->
+<aside id="leftsidebar" class="sidebar">
+
+    <div class="tab-content">
+        <div class="tab-pane stretchRight active" id="dashboard">
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        <div class="user-info">
+                            {% if request.session.email %}
+                            <div class="image"><a href=""><img src="{{request.session.profile_pic}}" alt="User"></a></div>
+                            <div class="detail">
+                                
+                                <h4>{{request.session.name}}</h4>  
+                            {% endif %}                      
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header">MAIN</li>
+                    
+                    <li class=""><a href="#"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a>
+                    </li>  
+
+                    <li class=""><a href="#"><i class="zmdi zmdi-calendar-check"></i><span>Your profile</span></a>
+                    </li>
+
+                    <li class="">
+                        <a href="#"><i class="zmdi zmdi-book"></i><span>Your booking</span></a>
+                    </li>
+
+                    <li class="">
+                        <a href="#"><i class="zmdi zmdi-movie "></i><span>Add Video</span></a>
+                    </li>
+
+                    <li class="">
+                        <a href="#"><i class="zmdi zmdi-image "></i><span>Add Photo</span></a>
+                    </li>
+
+                    <li class="">
+                        <a href="#"><i class="zmdi zmdi-account-add"></i><span>See Booking</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+</aside>
+        </section>
+                <!-- Scripts -->
+        <script src="{% static 'bundles\libscripts.bundle.js' %}"></script>    
+        <script src="{% static 'bundles\vendorscripts.bundle.js' %}"></script>
+
+        <script src="{% static 'bundles\mainscripts.bundle.js' %}"></script>
+                        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/59f5afbbbb0c3f433d4c5c4c/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
+    </body>
+</html>
+{% block content %}
+{% endblock %}
