@@ -57,7 +57,7 @@
         <div class="col-md-12 content-center">
             <div class="card-plain">
 
-                <form class="form" method="POST" action="#">
+                <form class="form" method="POST" action="{% url 'artist-login' %}">
 
                     {% csrf_token %}
                     <div class="header">

@@ -34,7 +34,22 @@ def artist_register(request):
 		return render(request,'artist-register.html')
 
 def artist_login(request):
-	return render(request,'artist-login.html')
+	if request.method=="POST":
+		try:
+			user=User.objects.get(email=request.POST['email'])
+			if user.password == request.POST['password']:
+				request.session['email']=user.email
+				request.session['name']=user.name
+				request.session['profile_pic']=user.profile_pic.url
+				return render(request,'homepage-artist.html')
+			else:
+				msg="Incorrect Password"
+				return render(request,'artist-login.html',{'msg':msg})
+		except:
+			msg="Email is not registered"
+			return render(request,'artist-register.html',{'msg':msg})
+	else:
+		return render(request,'artist-login.html')
 
 def artist_home(request):
 	return render(request,'homepage-artist.html')
