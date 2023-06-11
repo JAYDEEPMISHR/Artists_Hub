@@ -53,3 +53,12 @@ def artist_login(request):
 
 def artist_home(request):
 	return render(request,'homepage-artist.html')
+
+def artist_logout(request):
+	try:
+		del request.session['email']
+		del request.session['name']
+		del request.session['profile_pic']
+		return render(request,'artist-login.html')
+	except:
+		return render(request,'artist-login.html')

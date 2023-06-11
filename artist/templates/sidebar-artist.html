@@ -59,7 +59,7 @@
         {% if request.session.email %}
         <li class="float-right">
             <li><a href="#"><i style='font-size:15px, 'class='fa fa-key'></i>Change Password</a></li>
-            <li><a href="#"><i style='font-size:15px' class='far'>&#xf2bd;</i> Logout({{request.session.name}})</a></li>  
+            <li><a href="{% url 'artist-logout' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Logout({{request.session.name}})</a></li>  
         </li>
         {% else %}
             <li><a href="{% url 'artist-register' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Sign Up</a></li>
