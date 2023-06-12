@@ -7,5 +7,5 @@ urlpatterns = [
     path('artist-login/',views.artist_login,name='artist-login'),
     path('artist-home/',views.artist_home,name='artist-home'),
     path('artist-logout/',views.artist_logout,name='artist-logout'),
-    path('artist-profile/',views.artist_profile,name='artist-profile'),
+    path('artist-bio/',views.artist_bio,name='artist-bio'),
     ]
