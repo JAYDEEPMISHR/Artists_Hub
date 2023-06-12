@@ -54,7 +54,7 @@
                 <div class="card-body">
 
                 <!-- Form for editing   -->
-                <form method="POST" action="{% url 'artist-profile' %}">
+                <form method="POST" action="#">
                 {% csrf_token %}
                 {% if request.session.email %}
                   <div class="row">
