@@ -1,0 +1,113 @@
+{% extends 'sidebar-artist.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="csrf-token" content="iL8hUXsdXy71MbOZjq4fWUv4KGPZnJ7k17P7RClL">
+        <link rel="icon" href="https://thememakker.com/templates/oreo/hospital/laravel/public/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+        <title>Artists Profile </title>
+        <meta name="description" content="Oero Laravel">
+        <meta name="author" content="Oero Laravel">
+                
+                
+        <link rel="stylesheet" href="{% static 'plugins\bootstrap\css\bootstrap.min.css' %">
+        <link rel="stylesheet" href="{% static 'css\timeline.css '%}">
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="{% static 'css\main.css' %}">
+        <link rel="stylesheet" href="{% static 'css\color_skins.css' %}">
+    </head> 
+
+<!-- Profile-->
+<section style="background-color: #eee;">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#">User</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                {% if request.session.email %}
+                <div class="card-body text-center">
+                  <img src="{{request.session.profile_pic}}" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                  <h5 class="my-3">{{request.session.name}}</h5>  
+                </div>
+                {% endif %}
+              </div> 
+            </div>
+            
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+
+                <!-- Form for editing   -->
+                <form method="POST" action="{% url 'artist-profile' %}">
+                {% csrf_token %}
+                {% if request.session.email %}
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Full Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <div class="text-muted mb-0"><input type="text" name="" value="{{request.session.name}}"> </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><input type="text" name="" value="{{request.session.email}}" readonly></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="d-flex justify-content-center mb-2">
+                    <button class="btn btn-lg-primary" value="Submit">Submit</button>
+                  </div>
+                  {% endif %}
+                </div>
+              </div> 
+            </div>
+            </form>
+
+        </div>
+     </div>
+</section>
+
+     <!-- Scripts -->
+    <script src="..\assets\bundles\libscripts.bundle.js"></script>    
+    <script src="..\assets\bundles\vendorscripts.bundle.js"></script>
+    <script src="..\assets\bundles\mainscripts.bundle.js"></script>
+    <script src="{% static 'bundles\knob.bundle.js' %}"></script>
+    <script src="{% static 'js\pages\charts\jquery-knob.js' %}"></script>
+    <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/59f5afbbbb0c3f433d4c5c4c/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
+    </body>
+</html>
+
+{% endblock %}

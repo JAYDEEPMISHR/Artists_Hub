@@ -62,3 +62,6 @@ def artist_logout(request):
 		return render(request,'artist-login.html')
 	except:
 		return render(request,'artist-login.html')
+
+def artist_profile(request):
+	return render(request,'artist-profile.html')
