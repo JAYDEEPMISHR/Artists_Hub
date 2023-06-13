@@ -8,4 +8,5 @@ urlpatterns = [
     path('artist-home/',views.artist_home,name='artist-home'),
     path('artist-logout/',views.artist_logout,name='artist-logout'),
     path('artist-bio/',views.artist_bio,name='artist-bio'),
+    path('artist-change-password/',views.artist_change_password,name='artist-change-password'),
     ]

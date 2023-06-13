@@ -1,5 +1,13 @@
 from django.shortcuts import render
 from .models import User
+from django.conf import settings
+from django.http import JsonResponse,HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
+import random
+import json
+from django.utils import timezone
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -65,3 +73,7 @@ def artist_logout(request):
 
 def artist_bio(request):
 	return render(request,'artist-bio.html')
+
+def artist_change_password(request):
+	return render(request,'artist-change-password.html')
+
