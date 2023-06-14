@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import User
 from django.conf import settings
 from django.http import JsonResponse,HttpResponse
@@ -75,5 +75,19 @@ def artist_bio(request):
 	return render(request,'artist-bio.html')
 
 def artist_change_password(request):
-	return render(request,'artist-change-password.html')
+	if request.method=="POST":
+		user=User.objects.get(email=request.session['email'])
+		if user.password==request.POST['old_password']:
+			if request.POST['new_password']==request.POST['cnew_password']:
+				user.password=request.POST['new_password']
+				user.save()
+				return redirect(artist_logout)
+			else:
+				msg="New Password and Confirm Password does not match"
+				return render(request,'artist-change-password.html',{'msg':msg})
+		else:
+			msg="Old Password does not match"
+			return render(request,'artist-change-password.html',{'msg':msg})
+	else:
+		return render(request,'artist-change-password.html')
 
