@@ -169,7 +169,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-09.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-09.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Abstract</h2>
                         <a href="photo-detail.html">View more</a>
@@ -182,7 +182,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-10.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-10.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Flowers</h2>
                         <a href="photo-detail.html">View more</a>
@@ -195,7 +195,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-11.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-11.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Rosy</h2>
                         <a href="photo-detail.html">View more</a>
@@ -208,7 +208,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-12.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-12.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Rocki</h2>
                         <a href="photo-detail.html">View more</a>
@@ -221,7 +221,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-13.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-13.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Purple</h2>
                         <a href="photo-detail.html">View more</a>
@@ -234,7 +234,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-14.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-14.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Sea</h2>
                         <a href="photo-detail.html">View more</a>
@@ -247,7 +247,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-15.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-15.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Turtle</h2>
                         <a href="photo-detail.html">View more</a>
@@ -260,7 +260,7 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
-                    <img src="img/img-16.jpg" alt="Image" class="img-fluid">
+                    <img src="{% static 'img1/img-16.jpg' %}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Peace</h2>
                         <a href="photo-detail.html">View more</a>
@@ -315,6 +315,12 @@
         })();
         </script>
         <!--End of Tawk.to Script-->
+        <script src="{% static 'js1/plugins.js' %}"></script>
+    	<script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
 </html>
 
  {% endblock %}
