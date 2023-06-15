@@ -11,3 +11,10 @@ class User(models.Model):
 
 	def __str__(self):
 		return self.name+'-'+self.usertype
+
+class Photo(models.Model):
+	pic_name=models.CharField(max_length=100)
+	date=models.DateTimeField()
+
+	def __str__(self):
+		return self.pic_name
