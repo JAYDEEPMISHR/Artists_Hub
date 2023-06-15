@@ -15,6 +15,7 @@ class User(models.Model):
 class Photo(models.Model):
 	pic_name=models.CharField(max_length=100)
 	date=models.DateTimeField()
+	pic=models.ImageField(upload_to="upload_images/", default=True)
 
 	def __str__(self):
 		return self.pic_name

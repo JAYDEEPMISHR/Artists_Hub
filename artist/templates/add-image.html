@@ -20,7 +20,7 @@
 </head>
 <body>
 	   <div class="body" style="padding-top: 70px; width: 80%; float: right">
-	 		<form action="{% url 'add-photo' %}" id="frmFileUpload" class="dropzone m-b-20" method="post" enctype="multipart/form-data">
+	 		<form action="{% url 'add-image' %}" id="frmFileUpload" class="dropzone m-b-20" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                     <div class="row clearfix">
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import User
+from .models import User,Photo
 from django.conf import settings
 from django.http import JsonResponse,HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -92,4 +92,12 @@ def artist_change_password(request):
 		return render(request,'artist-change-password.html')
 
 def add_image(request):
-	return render(request,'add-image.html')
+	if request.method=="POST":
+		pic=Photo.objects.create(
+			pic_name=request.POST['pic-name'],
+			date=request.POST['date'],
+			pic=request.FILES['file']
+			)
+		return render(request,'homepage-artist.html',{'pic':pic})
+	else:
+		return render(request,'add-image.html')
