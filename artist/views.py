@@ -91,3 +91,5 @@ def artist_change_password(request):
 	else:
 		return render(request,'artist-change-password.html')
 
+def add_image(request):
+	return render(request,'add-image.html')

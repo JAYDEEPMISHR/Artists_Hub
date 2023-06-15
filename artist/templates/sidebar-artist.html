@@ -63,7 +63,7 @@
             <li>
                 <a href="{% url 'artist-logout' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Logout({{request.session.name}})</a></li> 
             <li>
-                <a href="index.html"><i style='font-size:15px, 'class='fa fa-image'></i>Photos</a>
+                <a href="{% url 'add-image' %}"><i style='font-size:15px, 'class='fa fa-image'></i>Photos</a>
             </li> 
             <li>
                 <a href="videos.html"><i style='font-size:15px, 'class='fa fa-video'></i>Videos</a>
@@ -111,7 +111,7 @@
                     </li>
 
                     <li class="">
-                        <a href="#"><i class="zmdi zmdi-image "></i><span>Add Photo</span></a>
+                        <a href="{% url 'add-image' %}"><i class="zmdi zmdi-image "></i><span>Add Photo</span></a>
                     </li>
 
                     <li class="">
