@@ -1,0 +1,54 @@
+{% extends 'sidebar-artist.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="iL8hUXsdXy71MbOZjq4fWUv4KGPZnJ7k17P7RClL">
+    <!-- <link rel="icon" href="https://thememakker.com/templates/oreo/hospital/laravel/public/favicon.ico" type="image/x-icon"> -->
+	<title>Add video</title>
+	<meta name="description" content="Oero Laravel">
+        <meta name="author" content="Oero Laravel">        
+        <link rel="stylesheet" href="{% static 'plugins\bootstrap\css\bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins\dropzone\dropzone.css' %}">
+
+         <!-- Custom Css -->
+        <link rel="stylesheet" href="{% static 'css\main.css' %}">
+        <link rel="stylesheet" href="{% static 'css\color_skins.css' %}">
+</head>
+<body>
+	   <div class="body" style="padding-top: 70px; width: 80%; float: right">
+	 		<form action="{% url 'add-video' %}" id="frmFileUpload" class="dropzone m-b-20" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="row clearfix">
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Video Name" name="pic-name">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="date" class="form-control" placeholder="Video Upload date" name="date">
+                            </div>
+                        </div>
+                        <div class="col-sm-12"> 
+                            <div class="fallback">
+                                <input name="file" type="file">
+                            </div>   
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">                            
+                        <div class="col-sm-12">
+                            <input type="submit" value="Submit" class="btn btn-primary btn-round">
+                        </div>
+                    </div>
+            </form>
+        </div>
+</section>
+</body>
+</html>
+{% endblock %}

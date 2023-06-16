@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import User,Photo
+from .models import User,Photo,Video
 from django.conf import settings
 from django.http import JsonResponse,HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -101,3 +101,14 @@ def add_image(request):
 		return render(request,'homepage-artist.html',{'pic':pic})
 	else:
 		return render(request,'add-image.html')
+
+def artist_add_video(request):
+	if request.method=="POST":
+		video=Video.objects.create(
+			video_name=request.POST['video-name'],
+			date=request.POST['date'],
+			video=request.FILES['videofile']
+			)
+		return render(request,'artist-add-video.html',{'video':video})
+	else:
+		return render(request,'artist-add-video.html')

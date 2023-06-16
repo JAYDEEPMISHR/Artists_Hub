@@ -66,7 +66,7 @@
                 <a href="{% url 'add-image' %}"><i style='font-size:15px, 'class='fa fa-image'></i>Photos</a>
             </li> 
             <li>
-                <a href="videos.html"><i style='font-size:15px, 'class='fa fa-video'></i>Videos</a>
+                <a href="{% url 'artist-add-video' %}"><i style='font-size:15px, 'class='fa fa-video'></i>Videos</a>
             </li>
         </li>           
         {% else %}
@@ -107,7 +107,7 @@
                     </li>
 
                     <li class="">
-                        <a href="#"><i class="zmdi zmdi-movie "></i><span>Add Video</span></a>
+                        <a href="{% url 'artist-add-video' %}"><i class="zmdi zmdi-movie "></i><span>Add Video</span></a>
                     </li>
 
                     <li class="">

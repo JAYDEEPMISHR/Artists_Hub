@@ -19,3 +19,11 @@ class Photo(models.Model):
 
 	def __str__(self):
 		return self.pic_name
+
+class Video(models.Model):
+	video=models.FileField(upload_to="videos/")
+	date=models.DateTimeField()
+	video_name=models.CharField(max_length=200)
+
+	def __str__(self):
+		return self.video_name
