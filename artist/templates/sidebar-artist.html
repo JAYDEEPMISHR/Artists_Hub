@@ -59,15 +59,16 @@
         {% if request.session.email %}
         <li class="float-right">
             <li>
-                <a href="{% url 'artist-change-password' %}"><i style='font-size:15px, 'class='fa fa-key'></i>Change Password</a></li>
-            <li>
-                <a href="{% url 'artist-logout' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Logout({{request.session.name}})</a></li> 
-            <li>
                 <a href="{% url 'add-image' %}"><i style='font-size:15px, 'class='fa fa-image'></i>Photos</a>
             </li> 
             <li>
                 <a href="{% url 'artist-add-video' %}"><i style='font-size:15px, 'class='fa fa-video'></i>Videos</a>
             </li>
+            <li>
+                <a href="{% url 'artist-change-password' %}"><i style='font-size:15px, 'class='fa fa-key'></i>Change Password</a></li>
+            <li>
+                <a href="{% url 'artist-logout' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Logout({{request.session.name}})</a></li> 
+            
         </li>           
         {% else %}
             <li><a href="{% url 'artist-register' %}"><i style='font-size:15px' class='far'>&#xf2bd;</i> Sign Up</a></li>
