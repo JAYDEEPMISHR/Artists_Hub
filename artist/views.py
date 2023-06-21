@@ -99,7 +99,7 @@ def add_image(request):
 			date=request.POST['date'],
 			pic=request.FILES['file']
 			)
-		return render(request,'homepage-artist.html',{'pic':pic})
+		return render(request,'add-image.html',{'pic':pic})
 	else:
 		return render(request,'add-image.html')
 
