@@ -123,6 +123,6 @@ def artist_change_profile_pic(request):
 		user.save()
 		msg="Profile-Pic change successfully"
 		request.session['profile_pic']=user.profile_pic.url
-		return render(request,'artist-bio.html',{'user':user})
+		return render(request,'artist-change-profile-pic.html',{'user':user})
 	else:
 		return render(request,'artist-change-profile-pic.html',{'user':user})
