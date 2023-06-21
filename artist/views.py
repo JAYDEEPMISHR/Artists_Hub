@@ -60,7 +60,8 @@ def artist_login(request):
 		return render(request,'artist-login.html')
 
 def artist_home(request):
-	return render(request,'homepage-artist.html')
+	pic= Photo.objects.all()
+	return render(request,'homepage-artist.html',{'pic':pic})
 
 def artist_logout(request):
 	try:
