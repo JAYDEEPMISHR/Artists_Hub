@@ -112,3 +112,17 @@ def artist_add_video(request):
 		return render(request,'artist-add-video.html',{'video':video})
 	else:
 		return render(request,'artist-add-video.html')
+
+def artist_change_profile_pic(request):
+	user=User.objects.get(email=request.session['email'])
+	if request.method=="POST":	
+		try:
+			user.profile_pic=request.FILE['profile_pic']
+		except:
+			pass
+		user.save()
+		msg="Profile-Pic change successfully"
+		request.session['profile_pic']=user.profile_pic.url
+		return render(request,'artist-bio.html',{'user':user})
+	else:
+		return render(request,'artist-change-profile-pic.html',{'user':user})

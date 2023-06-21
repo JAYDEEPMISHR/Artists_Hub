@@ -11,4 +11,5 @@ urlpatterns = [
     path('artist-change-password/',views.artist_change_password,name='artist-change-password'),
     path('add-image/',views.add_image,name='add-image'),
     path('artist-add-video/',views.artist_add_video,name='artist-add-video'),
+    path('artist-change-profile-pic/',views.artist_change_profile_pic,name='artist-change-profile-pic'),
     ]
