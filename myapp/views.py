@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import User,Video,Photo,Booking
+from artist.models import User,Photo,Video
 
 # Create your views here.
 
